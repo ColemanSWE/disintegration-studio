@@ -1,0 +1,27 @@
+@mixin brutalist-shadow($color: var(--kinetic-accent), $size: 4px) {
+  transform: translate($size, -$size);
+  box-shadow: -$size $size 0 $color;
+}
+
+@mixin brutalist-hover($color: var(--kinetic-accent)) {
+  &:hover {
+    @include brutalist-shadow($color);
+    border-color: $color;
+  }
+}
+
+@mixin button-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  font-family: var(--kinetic-font-mono);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+@mixin button-size($height) {
+  height: $height;
+}
+

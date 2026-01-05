@@ -1,0 +1,144 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.modeSelector {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--kinetic-bg-base);
+}
+
+.modeSelectorContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.modeSelectorTitle {
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 8px 0;
+  font-family: var(--kinetic-font-mono);
+  color: var(--kinetic-text-primary);
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 rgba(0, 102, 255, 0.3);
+}
+
+.modeSelectorSubtitle {
+  font-size: 0.813rem;
+  color: var(--kinetic-text-secondary);
+  margin: 0 0 64px 0;
+  font-weight: 500;
+  font-family: var(--kinetic-font-mono);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.modeCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.modeCard {
+  padding: 32px 24px;
+  background: var(--kinetic-bg-surface);
+  border: 2px solid var(--kinetic-border);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: transparent;
+    transition: background 0.2s;
+  }
+
+  &:hover {
+    @include brutalist-shadow(var(--kinetic-accent), 4px);
+    border-color: var(--kinetic-accent);
+
+    &::before {
+      background: var(--kinetic-accent);
+    }
+  }
+
+  h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--kinetic-text-primary);
+    font-family: var(--kinetic-font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: var(--kinetic-line-height-tight, 1.3);
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.813rem;
+    color: var(--kinetic-text-secondary);
+    line-height: var(--kinetic-line-height-base, 1.5);
+    font-family: var(--kinetic-font-mono);
+  }
+}
+
+.modeCardIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--kinetic-border);
+  border-radius: 0;
+  background: var(--kinetic-bg-base);
+  color: var(--kinetic-text-primary);
+  transition: all 0.2s;
+}
+
+.modeCard:hover .modeCardIcon {
+  background: var(--kinetic-accent);
+  border-color: var(--kinetic-accent);
+  color: #000;
+  transform: none;
+  box-shadow: none;
+}
+
+.modeSelectorBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  background: var(--kinetic-bg-base);
+}
+
+@media (max-width: 900px) {
+  .modeCards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .modeCard {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+

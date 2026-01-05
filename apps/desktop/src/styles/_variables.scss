@@ -1,0 +1,108 @@
+:root {
+  /* BRUTALIST DESIGN SYSTEM - High Contrast, Geometric Precision */
+  
+  /* Base - Pure black/white contrast */
+  --kinetic-bg-base: #000000;
+  --kinetic-bg-surface: #0a0a0a;
+  --kinetic-bg-elevated: #141414;
+  --kinetic-bg-input: #1a1a1a;
+  
+  /* Borders - Sharp, high contrast */
+  --kinetic-border: #333333;
+  --kinetic-border-strong: #666666;
+  --kinetic-border-focus: #ffffff;
+  --kinetic-border-accent: #0066ff;
+  
+  /* Text - Maximum contrast */
+  --kinetic-text-primary: #ffffff;
+  --kinetic-text-secondary: #cccccc;
+  --kinetic-text-tertiary: #888888;
+  --kinetic-text-disabled: #444444;
+  
+  /* Accent - Single bold electric blue */
+  --kinetic-accent: #0066ff;
+  --kinetic-accent-hover: #3385ff;
+  --kinetic-accent-active: #0052cc;
+  
+  /* Semantic - Minimal color usage */
+  --kinetic-success: #00ff41;
+  --kinetic-warning: #ffaa00;
+  --kinetic-error: #ff0033;
+  
+  /* Typography - Monospace primary */
+  --kinetic-font-mono: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
+  --kinetic-font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+  
+  /* Type scale - Bold, technical */
+  --kinetic-text-xs: 0.688rem;    /* 11px */
+  --kinetic-text-sm: 0.813rem;    /* 13px */
+  --kinetic-text-base: 0.938rem;  /* 15px */
+  --kinetic-text-lg: 1.125rem;    /* 18px */
+  --kinetic-text-xl: 1.5rem;      /* 24px */
+  --kinetic-text-2xl: 2rem;       /* 32px */
+  --kinetic-text-3xl: 3rem;       /* 48px */
+  --kinetic-text-4xl: 4rem;       /* 64px */
+  
+  /* Spacing - Grid-based, 4px system */
+  --kinetic-space-1: 0.25rem;   /* 4px */
+  --kinetic-space-2: 0.5rem;    /* 8px */
+  --kinetic-space-3: 0.75rem;   /* 12px */
+  --kinetic-space-4: 1rem;      /* 16px */
+  --kinetic-space-6: 1.5rem;    /* 24px */
+  --kinetic-space-8: 2rem;      /* 32px */
+  --kinetic-space-12: 3rem;     /* 48px */
+  --kinetic-space-16: 4rem;     /* 64px */
+  
+  /* Border Radius - Minimal, sharp edges */
+  --kinetic-radius-none: 0;
+  --kinetic-radius-sm: 2px;
+  --kinetic-radius-md: 3px;
+  
+  /* Shadows - Sharp, geometric */
+  --kinetic-shadow-sm: 0 2px 0 rgba(255, 255, 255, 0.1);
+  --kinetic-shadow-md: 0 4px 0 rgba(255, 255, 255, 0.08);
+  --kinetic-shadow-lg: 0 8px 0 rgba(255, 255, 255, 0.06);
+  --kinetic-shadow-accent: 0 0 0 2px var(--kinetic-accent);
+  
+  /* BUTTONS - Standardized Heights */
+  --kinetic-btn-height-sm: 32px;
+  --kinetic-btn-height-md: 40px;
+  --kinetic-btn-height-lg: 48px;
+  
+  /* LEGACY MAPPINGS - Brutalist Override */
+  --color-bg: var(--kinetic-bg-base);
+  --color-surface: var(--kinetic-bg-surface);
+  --color-surface-elevated: var(--kinetic-bg-elevated);
+  --color-border: var(--kinetic-border);
+  --color-border-focus: var(--kinetic-border-focus);
+  --color-text: var(--kinetic-text-primary);
+  --color-text-muted: var(--kinetic-text-secondary);
+  --color-text-dim: var(--kinetic-text-tertiary);
+  --color-primary: var(--kinetic-accent);
+  --color-primary-hover: var(--kinetic-accent-hover);
+  --color-accent-photo: var(--kinetic-accent);
+  --color-accent-video: var(--kinetic-accent);
+  --color-danger: var(--kinetic-error);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-full: 0;
+  --shadow-sm: var(--kinetic-shadow-sm);
+  --shadow-md: var(--kinetic-shadow-md);
+  --shadow-lg: var(--kinetic-shadow-lg);
+  --font-sans: var(--kinetic-font-sans);
+  --font-mono: var(--kinetic-font-mono);
+  
+  /* Forge legacy (deprecated) */
+  --forge-bg-base: var(--kinetic-bg-base);
+  --forge-bg-raised: var(--kinetic-bg-surface);
+  --forge-bg-panel: var(--kinetic-bg-elevated);
+  --forge-text-primary: var(--kinetic-text-primary);
+  --forge-text-secondary: var(--kinetic-text-secondary);
+  --forge-accent-primary: var(--kinetic-accent);
+  --forge-accent-cyan: var(--kinetic-accent);
+  --forge-accent-violet: var(--kinetic-accent);
+  --forge-accent-rose: var(--kinetic-accent);
+  --forge-radius-full: var(--kinetic-radius-md);
+}
+

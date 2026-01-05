@@ -1,0 +1,304 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.effectsPanel {
+  padding: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.effectsPanelHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+}
+
+.effectsAddContainer {
+  position: relative;
+}
+
+.effectsAddBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  @include button-size(var(--kinetic-btn-height-md));
+  padding: 0 16px;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  color: var(--color-text-primary);
+  font-size: var(--kinetic-text-sm);
+  font-family: var(--kinetic-font-mono);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.1s;
+  line-height: 0;
+
+  span {
+    line-height: 1;
+  }
+
+  &:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #000;
+  }
+}
+
+.effectsAddMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--kinetic-bg-elevated);
+  border: 2px solid var(--kinetic-border-strong);
+  border-radius: 0;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.effectsMenuSection {
+  padding: 8px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+.effectsMenuLabel {
+  display: block;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.effectsAddMenuItem {
+  width: 100%;
+  @include button-size(var(--kinetic-btn-height-sm));
+  padding: 0 12px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: var(--kinetic-text-xs);
+  font-family: var(--kinetic-font-mono);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.1s;
+
+  &:hover {
+    background: var(--color-surface);
+  }
+}
+
+.effectsList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.effectsEmpty {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--kinetic-text-sm);
+}
+
+.effectCard {
+  background: var(--kinetic-bg-surface);
+  border: 1px solid var(--kinetic-border);
+  border-radius: 0;
+  padding: 12px;
+  transition: all 0.1s;
+  overflow: hidden;
+
+  &:hover {
+    border-color: var(--kinetic-accent);
+  }
+
+  &.disabled {
+    opacity: 0.6;
+  }
+
+  &.style {
+    border-color: rgba(168, 85, 247, 0.3);
+
+    &:hover {
+      border-color: rgba(168, 85, 247, 0.5);
+    }
+  }
+}
+
+.effectCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.effectToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex: 1;
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+  }
+}
+
+.effectName {
+  font-size: var(--kinetic-text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.effectBadge {
+  padding: 6px 10px;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 0;
+  font-size: 0.75rem;
+  color: #a855f7;
+  font-weight: 600;
+  font-family: var(--kinetic-font-mono);
+  text-transform: uppercase;
+}
+
+.effectCardActions {
+  display: flex;
+  gap: 4px;
+}
+
+.effectActionBtn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.1s;
+
+  &:hover {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border-color: var(--color-border-focus);
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    &:hover {
+      background: transparent;
+      color: var(--color-text-muted);
+      border-color: var(--color-border);
+    }
+  }
+
+  &.remove:hover {
+    background: var(--color-danger);
+    border-color: var(--color-danger);
+    color: #fff;
+  }
+}
+
+.effectCardParams {
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.paramRow {
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--kinetic-text-sm);
+    color: var(--color-text);
+
+    span:first-child {
+      min-width: 80px;
+      font-weight: 500;
+    }
+  }
+
+  input[type="range"] {
+    flex: 1;
+  }
+
+  select {
+    flex: 1;
+    @include button-size(var(--kinetic-btn-height-sm));
+    padding: 0 10px;
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    color: var(--color-text);
+    font-size: var(--kinetic-text-xs);
+    font-family: var(--kinetic-font-mono);
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--color-border-focus);
+    }
+  }
+}
+
+.paramValue {
+  min-width: 50px;
+  text-align: right;
+  font-size: var(--kinetic-text-xs);
+  color: var(--color-text-muted);
+  font-family: var(--kinetic-font-mono);
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+  }
+}
+

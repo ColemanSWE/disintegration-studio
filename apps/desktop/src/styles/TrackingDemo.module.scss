@@ -1,0 +1,57 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.trackingDemo .trackingControls {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+}
+
+.trackingToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  @include button-size(var(--kinetic-btn-height-md));
+  padding: 0 24px;
+  background: var(--kinetic-bg-base);
+  border: 2px solid var(--kinetic-border-strong);
+  border-radius: 0;
+  color: var(--kinetic-text-secondary);
+  font-family: var(--kinetic-font-mono);
+  text-transform: uppercase;
+  font-size: var(--kinetic-text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.1s;
+
+  &:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+
+  &.active {
+    background: var(--kinetic-bg-elevated);
+    border-color: var(--kinetic-accent);
+    color: var(--kinetic-accent);
+    @include brutalist-shadow(var(--kinetic-accent), 4px);
+  }
+}
+
+.densityControl {
+  margin-top: 16px;
+}
+
+.densityValue {
+  margin-top: 8px;
+  font-size: var(--kinetic-text-xs);
+  font-family: var(--kinetic-font-mono);
+  color: var(--kinetic-text-secondary);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
