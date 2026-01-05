@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  root: 'apps/desktop',
   base: './',
   server: {
     port: 5174,
@@ -16,7 +17,7 @@ export default defineConfig({
     exclude: ['@ffmpeg/ffmpeg', '@ffmpeg/util'],
   },
   build: {
-    outDir: 'dist',
+    outDir: '../../dist',
   },
 })
 
