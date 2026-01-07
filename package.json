@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "main": "apps/desktop/dist-electron/main.js",
   "scripts": {
     "dev": "concurrently -k \"npm run dev:vite\" \"npm run dev:electron\"",
     "dev:vite": "vite",
-    "dev:electron": "wait-on http://localhost:5174 && tsc -p apps/desktop/electron && cross-env NODE_ENV=development electron .",
+    "dev:electron": "wait-on http://localhost:5174 && tsc -p apps/desktop/electron && mkdir -p apps/desktop/dist-electron && echo '{\"type\":\"commonjs\"}' > apps/desktop/dist-electron/package.json && cross-env NODE_ENV=development electron apps/desktop/dist-electron/main.js",
     "build": "tsc -p apps/desktop/electron && vite build && electron-builder",
     "preview": "vite preview",
     "lint": "eslint .",
@@ -16,11 +15,15 @@
   "dependencies": {
     "@ffmpeg/ffmpeg": "^0.12.10",
     "@ffmpeg/util": "^0.12.1",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@types/three": "^0.182.0",
     "gif.js": "^0.2.0",
     "lucide-react": "^0.562.0",
     "mp4box": "^0.5.2",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
